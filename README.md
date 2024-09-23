@@ -8,13 +8,13 @@ This is a .NET sample app demonstrating how to read, write and observe selected 
 
 ### Run in Visual Studio
 
-1. Clone this repository into a project in Visual Studio (select "Clone Repository..." in the file menu or splash screen.
+1. Clone this repository into a project in Visual Studio (select "Clone Repository..." in the file menu or splash screen).
 1. Connect one of the Jabra devices mentioned in `Program.cs` or adjust the code to target a Jabra device you have at hand.
 1. Run the project. E.g. by pressing f5 in Visual Studio
 
-## Selected device properties
+## Select device properties
 
-This sample demonstrates interactions with commonly used properties on selected devices. If you're looking to interact with other settings, properties or devices, please contact Jabra as described under "Help and issues".
+This sample demonstrates interactions with commonly used properties on select devices. If you're looking to interact with other settings, properties or devices, please contact Jabra as described under "Help and issues".
 
 ### Jabra Panacast 50 (select properties)
 

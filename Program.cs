@@ -7,7 +7,7 @@ internal class Program
 {
   static void Main()
   {
-    Console.WriteLine("Jabra SDK Device Settings Sample app starting. Press ctrl+c or close the window to end.\n");
+    Console.WriteLine("Jabra .NET SDK Device Settings Sample app starting. Press ctrl+c or close the window to end.\n");
     Start();
     Task.Delay(-1).Wait(); //Keep the console app running.
   }
@@ -35,13 +35,13 @@ internal class Program
 
     //Subscribe to Jabra devices being attached/detected by the SDK
     Console.WriteLine("Looking for Jabra devices...\n");
-    jabraSdk.DeviceAdded.Subscribe(async (IDevice device) =>
+    jabraSdk.DeviceAdded.Subscribe((IDevice device) =>
     {
       Console.WriteLine($"> Device attached/detected: {device.Name} (Product ID: {device.ProductId}, Serial #: {device.SerialNumber})");
       switch (device.Name)
       {
         case "Jabra PanaCast 50":
-          Console.WriteLine("\tPress '1': To write settings requering the device to reboot.\n\tPress any other key to read, write and observe properties not requering device reboot.\nAwaiting your input...");
+          Console.WriteLine("\tPress '1': To write settings requiring the device to reboot.\n\tPress any other key to read, write and observe properties not requiring device reboot.\nAwaiting your input...");
           var userSelection = Console.ReadKey(intercept: true);
           if (userSelection.KeyChar == '1')
             SampleForJabraPanacast50.ReadWriteWithReboot(device, jabraSdkPropsFactory);
