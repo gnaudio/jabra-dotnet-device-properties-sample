@@ -1,0 +1,15 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self  # Check out the Azure DevOps repo
+
+- script: |
+    git remote add github https://$(GITHUB_USERNAME):$(GITHUB_PAT)@github.com/DeveloperJabraCom/jabra-dotnet-device-properties-sample.git
+    git push github main
+  displayName: 'Push to GitHub - PUBLIC REPO'
