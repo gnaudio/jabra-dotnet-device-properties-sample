@@ -7,9 +7,9 @@ internal class Program
 {
   static void Main()
   {
-    Console.WriteLine("Jabra SDK Device Settings Sample app starting. Press any key to end.\n");
+    Console.WriteLine("Jabra SDK Device Settings Sample app starting. Press ctrl+c or close the window to end.\n");
     Start();
-    Console.ReadKey(); //Keep the console app running until a key is pressed
+    Task.Delay(-1).Wait(); //Keep the console app running.
   }
 
   static async void Start()
@@ -41,10 +41,16 @@ internal class Program
       switch (device.Name)
       {
         case "Jabra PanaCast 50":
-          SampleForJabraPanacast50.ReadWriteObserve(device, jabraSdkPropsFactory);
+          Console.WriteLine("\tPress '1': To write settings requering the device to reboot.\n\tPress any other key to read, write and observe properties not requering device reboot.\nAwaiting your input...");
+          var userSelection = Console.ReadKey(intercept: true);
+          if (userSelection.KeyChar == '1')
+            SampleForJabraPanacast50.ReadWriteWithReboot(device, jabraSdkPropsFactory);
+          else
+            SampleForJabraPanacast50.ReadWriteObserve(device, jabraSdkPropsFactory);
           break;
+
         case "Jabra Engage 50 II":
-          SampleForEngage50II.ReadWriteObserve(device, jabraSdkPropsFactory);
+          SampleForJabraEngage50II.ReadWriteObserve(device, jabraSdkPropsFactory);
           break;
       }
     });

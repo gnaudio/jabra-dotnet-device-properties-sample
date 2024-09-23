@@ -1,7 +1,7 @@
 using Jabra.NET.Sdk.Core.Types;
 using Jabra.NET.Sdk.Properties;
 
-internal class SampleForEngage50II
+internal class SampleForJabraEngage50II
 {
   public static async void ReadWriteObserve(IDevice device, IPropertyFactory jabraSdkPropsFactory)
   {
@@ -31,5 +31,5 @@ internal class SampleForEngage50II
     Console.WriteLine($"  * Smart Ringer enabled: {smartRingerEnabled}");
 
     SampleHelpers.ObserveProperty(propertyMap, "backgroundNoiseLevel"); // Observe the property for background noise level in dB around the headset wearer. 
-    }
+  }
 }
