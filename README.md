@@ -16,7 +16,7 @@ This is a .NET sample app demonstrating how to read, write and observe selected 
 
 This sample demonstrates interactions with commonly used properties on selected devices. If you're looking to interact with other settings, properties or devices, please contact Jabra as described under "Help and issues".
 
-### Jabra Panacast 50
+### Jabra Panacast 50 (select properties)
 
 | Property               | Description                                    | Values                                           | Operations    | triggers device reboot |
 | ---------------------- | ---------------------------------------------- | ------------------------------------------------ | ------------- | ---------------------- |
@@ -26,11 +26,13 @@ This sample demonstrates interactions with commonly used properties on selected 
 | `peopleCount`          | Number of people in field of view.             | integer                                          | read, observe | no                     |
 | `roomCapacityExceeded` | Alert when people count exceeds room capacity. | boolean                                          | observe       | no                     |
 
-### Engage 40 and Engage 50II
+### Engage 40, Engage 50 and Engage 50 II (select properties)
 
-| Property | Description | Values | Operations |
-| -------- | ----------- | ------ | ---------- |
-| `...`    | ...         | `...`  | ...        |
+| Property				 | Description                                         | Values  | Operations  |
+| ---------------------- | --------------------------------------------------- | ------- | ----------- |
+| `smartRingerEnabled`   | Smart Ringer in Engage 50 II control unit enabled   | boolean | read, write |
+| `backgroundNoiseLevel` | Background noise level in dB (in room around agent) | integer | observe     |
+| `firmwareVersion`	     | Version of firmware on device.                      | string  | read        |
 
 ## Help and issues
 
