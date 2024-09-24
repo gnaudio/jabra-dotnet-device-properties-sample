@@ -28,7 +28,7 @@ internal class SampleForJabraPanacast50
         transaction.Set("triggerForRoomVideoDefaults", new StringPropertyValue("endCall")); //Valid values: "endCall" | "pcUnplug"
         transaction.Set("intelligentZoomLatency", new IntegerPropertyValue(5)); //Valid values: integer 0-30
         transaction.Set("plazaMode", new StringPropertyValue("off")); //Valid values: "off" | "mode1" | "mode2"
-        await transaction.Commit();
+        await transaction.Commit(); // Panacast 50 will now reboot - you will lose the connection to the device and cannot asume that subsequent lines will work.
     }
 
     public static async void ReadWriteObserve(IDevice device, IPropertyFactory jabraSdkPropsFactory)
