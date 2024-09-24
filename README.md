@@ -1,6 +1,6 @@
 # Jabra SDK4 .NET - Device Settings and Properties Sample
 
-This is a .NET sample app demonstrating how to read, write and observe selected settings and properties of Jabra devices using the Jabra SDK4 .NET
+This is a .NET sample app demonstrating how to read, write and observe select settings and properties of Jabra devices using the Jabra SDK4 .NET
 
 > 💡 For an introduction and overview of Jabra device integration posibilities, please visit [developer.jabra.com](https://developer.jabra.com).
 
@@ -33,6 +33,9 @@ This sample demonstrates interactions with commonly used properties on select de
 | `smartRingerEnabled`   | Smart Ringer in Engage 50 II control unit enabled   | boolean | read, write |
 | `backgroundNoiseLevel` | Background noise level in dB (in room around agent) | integer | observe     |
 | `firmwareVersion`	     | Version of firmware on device.                      | string  | read        |
+| `agentSpeaking`        | Agent speaking indicator                            | boolean | observe     |
+| `customerSpeaking`     | Customer speaking indicator                         | boolean | observe     |
+| `audioExposure`        | Sound pressure in dB experienced by headset wearer  | integer | observe     |
 
 ## Help and issues
 
