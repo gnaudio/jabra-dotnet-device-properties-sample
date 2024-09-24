@@ -18,7 +18,7 @@ This sample demonstrates interactions with commonly used properties on select de
 
 ### Jabra Panacast 50 (select properties)
 
-| Property               | Description                                    | Values                                           | Operations    | triggers device reboot |
+| Property               | Description                                    | Values                                           | Operations    | Triggers device reboot |
 | ---------------------- | ---------------------------------------------- | ------------------------------------------------ | ------------- | ---------------------- |
 | `zoomMode2`            | Zoom mode.                                     | `fullScreen`, `intelligentZoom`, `activeSpeaker` | read, write   | no                     |
 | `roomCapacity`         | Threshold for triggering capacity alerts       | integer                                          | read, write   | no                     |
