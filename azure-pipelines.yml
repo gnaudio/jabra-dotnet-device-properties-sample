@@ -8,9 +8,15 @@ pool:
 
 steps:
   - checkout: self
-    fetchDepth: 0  # fetch full history from the ADO repo
+    fetchDepth: 0  # fetch full history from ADO repo
 
   - script: |
+      # Fetch the main branch explicitly
+      git fetch origin main
+
+      # Ensure the main branch is checked out
+      git checkout main
+
       # Set up the GitHub remote with authentication
       git remote add github https://$(GITHUB_USERNAME):$(GITHUB_PAT)@github.com/gnaudio/jabra-dotnet-device-properties-sample.git
 
