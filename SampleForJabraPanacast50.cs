@@ -6,7 +6,7 @@ internal class SampleForJabraPanacast50
 
     public static async void ReadWriteWithReboot(IDevice device, IPropertyFactory jabraSdkPropsFactory)
     {
-        string[] propertyNames = [
+        string[] propertyNames = {
             "zoomMode2",
             "firmwareVersion",
             "peopleCount",
@@ -15,7 +15,7 @@ internal class SampleForJabraPanacast50
             "triggerForRoomVideoDefaults",
             "intelligentZoomLatency",
             "plazaMode"
-            ];
+        };
         IPropertyMap propertyMap = await jabraSdkPropsFactory.CreateProperties(device, propertyNames);
 
         //Read properties from device. See README.md for details on each setting.
@@ -34,7 +34,7 @@ internal class SampleForJabraPanacast50
     public static async void ReadWriteObserve(IDevice device, IPropertyFactory jabraSdkPropsFactory)
     {
         //Define the properties you plan to interact with. This is not reading the property value from the device but prepares routines for interacting with them
-        string[] propertyNames = [
+        string[] propertyNames = {
           "zoomMode2",
           "firmwareVersion",
           "peopleCount",
@@ -43,7 +43,7 @@ internal class SampleForJabraPanacast50
           "triggerForRoomVideoDefaults",
           "intelligentZoomLatency",
           "plazaMode"
-        ];
+        };
         IPropertyMap propertyMap = await jabraSdkPropsFactory.CreateProperties(device, propertyNames);
 
         //Read properties from device. See README.md for details on each setting.

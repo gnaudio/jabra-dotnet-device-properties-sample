@@ -6,11 +6,11 @@ internal class SampleForJabraEngage50II
   public static async void ReadWriteObserve(IDevice device, IPropertyFactory jabraSdkPropsFactory)
   {
     //Define the properties you plan to interact with. This is not reading the property value from the device but prepares routines for interacting with them.
-    string[] propertyNames = [
+    string[] propertyNames = {
         "firmwareVersion",
         "smartRingerEnabled",
         "backgroundNoiseLevel"
-    ];
+    };
     IPropertyMap propertyMap = await jabraSdkPropsFactory.CreateProperties(device, propertyNames);
 
     //Read properties from device
@@ -23,7 +23,7 @@ internal class SampleForJabraEngage50II
     //Write properties to device
     IPropertyTransaction transaction = propertyMap.StartTransaction();
     transaction.Set("smartRingerEnabled", new BooleanPropertyValue(true));  //Valid values: true | false
-    await transaction.Commit(); // Commit the transaction to write the property changes to the device. Depending on property type, this can trigger a reboot of a device in which case you will lose the connection to the device and cannot asume that subsequent lines will work. 
+    await transaction.Commit(); // Commit the transaction to write the property changes to the device. Depending on property type, this can trigger a reboot of a device in which case you will lose the connection to the device and cannot asume that subsequent lines will work.
 
     //Read the changed property back out
     smartRingerEnabled = await propertyMap["smartRingerEnabled"].Get();
@@ -31,6 +31,6 @@ internal class SampleForJabraEngage50II
     Console.WriteLine($"  * Smart Ringer enabled: {smartRingerEnabled}");
 
     Console.WriteLine("Observing background noise level in dB around the headset wearer.\nOnly reports noise when microphone is active, e.g. when Windows Sound settings is open.");
-    SampleHelpers.ObserveProperty(propertyMap, "backgroundNoiseLevel"); // Observe the property for background noise level in dB around the headset wearer. 
+    SampleHelpers.ObserveProperty(propertyMap, "backgroundNoiseLevel"); // Observe the property for background noise level in dB around the headset wearer.
   }
 }
