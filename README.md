@@ -33,8 +33,8 @@ This sample demonstrates interactions with commonly used properties on select de
 | `smartRingerEnabled`   | Smart Ringer in Engage 50 II control unit enabled   | boolean | read, write |
 | `backgroundNoiseLevel` | Background noise level in dB (in room around agent) | integer | observe     |
 | `firmwareVersion`	     | Version of firmware on device.                      | string  | read        |
-| `agentSpeaking`        | Agent speaking indicator                            | boolean | observe     |
-| `customerSpeaking`     | Customer speaking indicator                         | boolean | observe     |
+| `agentSpeaking`        | Agent speaking indicator.                           | boolean | observe     |
+| `customerSpeaking`     | Customer speaking indicator.                        | boolean | observe     |
 | `audioExposure`        | Sound pressure in dB experienced by headset wearer  | integer | observe     |
 
 ## Help and issues
