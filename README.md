@@ -18,13 +18,20 @@ This sample demonstrates interactions with commonly used properties on select de
 
 ### Jabra Panacast 50 (select properties)
 
-| Property               | Description                                    | Values                                           | Operations    | Triggers device reboot |
-| ---------------------- | ---------------------------------------------- | ------------------------------------------------ | ------------- | ---------------------- |
-| `zoomMode2`            | Zoom mode.                                     | `fullScreen`, `intelligentZoom`, `activeSpeaker` | read, write   | no                     |
-| `roomCapacity`         | Threshold for triggering capacity alerts       | integer                                          | read, write   | no                     |
-| `firmwareVersion`      | Version of firmware on device.                 | string                                           | read          | no                     |
-| `peopleCount`          | Number of people in field of view.             | integer                                          | read, observe | no                     |
-| `roomCapacityExceeded` | Alert when people count exceeds room capacity. | boolean                                          | observe       | no                     |
+| Property               | Description                                    | Values															| Operations    | Triggers device reboot |
+| ---------------------- | ---------------------------------------------- | ----------------------------------------------------------------| ------------- | ---------------------- |
+| `zoomMode2`            | Zoom mode.                                     | `fullScreen`, `intelligentZoom`, `activeSpeaker`				| read, write   | no                     |
+| `roomCapacity`         | Threshold for triggering capacity alerts       | integer															| read, write   | no                     |
+| `firmwareVersion`      | Version of firmware on device.                 | string															| read          | no                     |
+| `peopleCount`          | Number of people in field of view.             | integer															| read, observe | no                     |
+| `roomCapacityExceeded` | Alert when people count exceeds room capacity. | boolean															| observe       | no                     |
+| `cameraPan`            | Camera Pan.                                    | integer															| read,write    | no                     |
+| `cameraTilt            | Camera Tilt.                                   | integer															| read,write    | no                     |
+| `cameraZoom`           | Camera Zoom.                                   | integer															| read,write    | no                     |
+| `cameraPanLimits`      | Camera Pan Limits.                             | object															| read			| no                     |
+| `cameraTiltLimits`     | Camera Tilt Limits.                            | object															| read          | no                     |
+| `cameraZoomLimits`     | Camera Zoom Limits.                            | object															| read          | no                     |
+| `cameraStatus`         | Camera Status.                                 | 'off','videoStreaming','audioStreaming','videoAudioStreaming'	| read, observe | no                     |
 
 ### Engage 40, Engage 50 and Engage 50 II (select properties)
 
