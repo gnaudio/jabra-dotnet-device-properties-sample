@@ -7,9 +7,6 @@ internal class SampleForJabraPanacast50
     public static async void ReadWriteWithReboot(IDevice device, IPropertyFactory jabraSdkPropsFactory)
     {
         string[] propertyNames = {
-            "zoomMode2",
-            "firmwareVersion",
-            "peopleCount",
             "videoStitchMode2",
             "fieldOfView2",
             "triggerForRoomVideoDefaults",
@@ -42,7 +39,8 @@ internal class SampleForJabraPanacast50
           "fieldOfView2",
           "triggerForRoomVideoDefaults",
           "intelligentZoomLatency",
-          "plazaMode"
+          "plazaMode",
+          "cameraZoomLimits"
         };
         IPropertyMap propertyMap = await jabraSdkPropsFactory.CreateProperties(device, propertyNames);
 
@@ -54,6 +52,15 @@ internal class SampleForJabraPanacast50
         PropertyValue triggerForRoomVideoDefaults = await propertyMap["triggerForRoomVideoDefaults"].Get();
         PropertyValue intelligentZoomLatency = await propertyMap["intelligentZoomLatency"].Get();
         PropertyValue plazaMode = await propertyMap["plazaMode"].Get();
+        PropertyValue cameraZoomLimits = await propertyMap["cameraZoomLimits"].Get();
+        ObjectPropertyValue cameraZoomLimitsObject = (ObjectPropertyValue)cameraZoomLimits;
+        PropertyValue minimumCameraZoom;
+        PropertyValue maximumCameraZoom;
+        PropertyValue cameraZoomStepSize;
+        cameraZoomLimitsObject.TryGetProperty("minimumCameraZoom", out minimumCameraZoom);
+        cameraZoomLimitsObject.TryGetProperty("maximumCameraZoom", out maximumCameraZoom);
+        cameraZoomLimitsObject.TryGetProperty("cameraZoomStepSize", out cameraZoomStepSize);
+
         Console.WriteLine($"Properties read from '{device.Name}':");
         Console.WriteLine($"  * Firmware version: {firmwareVersion}");
         Console.WriteLine($"  * Zoom mode: {zoomMode2}");
@@ -62,6 +69,10 @@ internal class SampleForJabraPanacast50
         Console.WriteLine($"  * Camera view default settings: {triggerForRoomVideoDefaults}");
         Console.WriteLine($"  * Automatic Zoom Speed: {intelligentZoomLatency}");
         Console.WriteLine($"  * Dynamic Composition mode: {plazaMode}");
+        Console.WriteLine($"  * Camera Zoom limits:");
+        Console.WriteLine($"  ** Minimum zoom value: {minimumCameraZoom}");
+        Console.WriteLine($"  ** Maximum zoom value: {maximumCameraZoom}");
+        Console.WriteLine($"  ** Zoom step size: {cameraZoomStepSize}");
 
         //Write properties (not requiring reboot) to device.
         IPropertyTransaction transaction = propertyMap.StartTransaction();
