@@ -44,6 +44,12 @@ This sample demonstrates interactions with commonly used properties on select de
 | `customerSpeaking`     | Customer speaking indicator.                        | boolean | observe     |
 | `audioExposure`        | Sound pressure in dB experienced by headset wearer  | integer | observe     |
 
+### Evolve, Evolve2, Engage and Speak wireless devices (select property)
+
+| Property				 | Description                                         | Values  | Operations    |
+| ---------------------- | --------------------------------------------------- | ------- | ------------- |
+| `batteryLevel`         | Battery level of headset							   | integer | read, observe |
+
 ## Help and issues
 
 If you have questions or find a bug, please reach out via the support form at [developer.jabra.com](https://developer.jabra.com)
