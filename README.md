@@ -43,6 +43,7 @@ This sample demonstrates interactions with commonly used properties on select de
 | `agentSpeaking`        | Agent speaking indicator.                           | boolean | observe     |
 | `customerSpeaking`     | Customer speaking indicator.                        | boolean | observe     |
 | `audioExposure`        | Sound pressure in dB experienced by headset wearer  | integer | observe     |
+| `microphoneMuteState`  | Mute state of microphone							   | boolean | observe     |
 
 ### Evolve, Evolve2, Engage and Speak wireless devices (select property)
 
