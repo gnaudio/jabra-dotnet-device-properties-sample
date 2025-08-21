@@ -1,6 +1,7 @@
 ﻿using System.Reactive.Linq;
 using Jabra.NET.Sdk.Core;
 using Jabra.NET.Sdk.Core.Types;
+using Jabra.NET.Sdk.Modules.EasyCallControl;
 using Jabra.NET.Sdk.Properties;
 
 internal class Program
@@ -65,6 +66,13 @@ internal class Program
                 case "Jabra Evolve2 65 Flex":
                     SampleForJabraEvolve2_65Flex.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;
+            }
+
+            // If device supports call controls, subscribe to call control related telemetry events.
+            var easyCallControlFactory = new EasyCallControlFactory(jabraSdk);
+            if (easyCallControlFactory.SupportsEasyCallControl(device))
+            {
+                SampleForCallControlHeadsets.Observe(device, jabraSdkPropsFactory);
             }
         });
 
