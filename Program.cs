@@ -66,6 +66,12 @@ internal class Program
                 case "Jabra Evolve2 65 Flex":
                     SampleForJabraEvolve2_65Flex.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;
+                case "Jabra Engage 65":
+                    SampleForJabraEngage65_75.ReadWriteObserve(device, jabraSdkPropsFactory);
+                    break;
+                case "Jabra Engage 75":
+                    SampleForJabraEngage65_75.ReadWriteObserve(device, jabraSdkPropsFactory);
+                    break;
             }
 
             // If device supports call controls, subscribe to call control related telemetry events.

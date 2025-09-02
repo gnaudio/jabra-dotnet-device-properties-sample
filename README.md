@@ -51,6 +51,12 @@ This sample demonstrates interactions with commonly used properties on select de
 | ---------------------- | --------------------------------------------------- | ------- | ------------- |
 | `batteryLevel`         | Battery level of headset							   | integer | read, observe |
 
+### Engage 65 and Engage 75 (select properties)
+
+| Property				 | Description																			 | Values | Operations |
+| ---------------------- | ------------------------------------------------------------------------------------- | ------ | ---------- |
+| `dectErrors`           | Error counters for DECT radio signal. Relevant property in object is `handoverCount`  | object | observe    |
+
 ## Help and issues
 
 If you have questions or find a bug, please reach out via the support form at [developer.jabra.com](https://developer.jabra.com)
