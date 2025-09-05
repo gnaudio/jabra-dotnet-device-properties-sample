@@ -72,6 +72,12 @@ internal class Program
                 case "Jabra Engage 75":
                     SampleForJabraEngage65_75.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;
+                case "Jabra Link 380": 
+                    SampleForJabraLink380_390.ReadWriteObserve(device, jabraSdkPropsFactory);
+                    break;
+                case "Jabra Link 390":
+                    SampleForJabraLink380_390.ReadWriteObserve(device, jabraSdkPropsFactory);
+                    break;
             }
 
             // If device supports call controls, subscribe to call control related telemetry events.

@@ -51,11 +51,17 @@ This sample demonstrates interactions with commonly used properties on select de
 | ---------------------- | --------------------------------------------------- | ------- | ------------- |
 | `batteryLevel`         | Battery level of headset							   | integer | read, observe |
 
-### Engage 65 and Engage 75 (select properties)
+### Engage 65 and Engage 75 (select property)
 
 | Property				 | Description																			 | Values | Operations |
 | ---------------------- | ------------------------------------------------------------------------------------- | ------ | ---------- |
 | `dectErrors`           | Error counters for DECT radio signal. Relevant property in object is `handoverCount`  | object | observe    |
+
+### Jabra Link 380 and Jabra Link 390 (select properties)
+| Property				 | Description                                         | Values                        | Operations  |
+| ---------------------- | --------------------------------------------------- | ----------------------------- | ----------- |
+| `firmwareVersion`	     | Version of firmware on device.                      | string                        | read        |
+| `bluetoothLinkQuality` | Bluetooth link quality between adapter and headset  | string ("off", "low", "high") | observe     | 
 
 ## Help and issues
 
