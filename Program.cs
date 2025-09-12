@@ -51,9 +51,17 @@ internal class Program
             switch (device.Name)
             {
                 case "Jabra PanaCast 50":
-                    Console.WriteLine("\tPress '1': To write settings requiring the device to reboot.\n\tPress any other key to read, write and observe properties not requiring device reboot.\nAwaiting your input...");
+                    Console.WriteLine(
+                        "\n" +
+                        "\tPress '1' to reboot the device.\n" +
+                        "\tPress '2' to write settings that require a device reboot.\n" +
+                        "\tPress any other key to read, write, and observe properties that do not require a reboot.\n" +
+                        "\n\tAwaiting your input...\n"
+                    );
                     var userSelection = Console.ReadKey(intercept: true);
                     if (userSelection.KeyChar == '1')
+                        SampleForJabraPanacast50.RebootDevice(device);
+                    else if (userSelection.KeyChar == '2')
                         SampleForJabraPanacast50.ReadWriteWithReboot(device, jabraSdkPropsFactory);
                     else
                         SampleForJabraPanacast50.ReadWriteObserve(device, jabraSdkPropsFactory);
@@ -72,7 +80,7 @@ internal class Program
                 case "Jabra Engage 75":
                     SampleForJabraEngage65_75.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;
-                case "Jabra Link 380": 
+                case "Jabra Link 380":
                     SampleForJabraLink380_390.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;
                 case "Jabra Link 390":

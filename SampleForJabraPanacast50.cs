@@ -1,4 +1,6 @@
+using Jabra.NET.Sdk.Core;
 using Jabra.NET.Sdk.Core.Types;
+using Jabra.NET.Sdk.Maintenance;
 using Jabra.NET.Sdk.Properties;
 
 internal class SampleForJabraPanacast50
@@ -88,5 +90,25 @@ internal class SampleForJabraPanacast50
         Console.WriteLine($"  * People count initial value: {peopleCount}");
         Console.WriteLine("  * Observing 'peopleCount' property for changes. \nChange the number of people visible to the device to see the value change in the console.");
         SampleHelpers.ObserveProperty(propertyMap, "peopleCount"); //Observe the property 'peopleCount' for changes
+    }
+
+    public static async void RebootDevice(IDevice device)
+    {
+        DeviceRebooter rebooter = new DeviceRebooter();
+
+        // Attempt to reboot the device. If a device does not support programmatic reboot a FeatureNotSupportedException is thrown.
+        try
+        {
+            Console.WriteLine($"* Rebooting '{device.Name}'. You will lose the connection to the device. A DeviceRemoved event will be sent. When reboot has completed a new DeviceAttach event is sent.");
+            await rebooter.Reboot(device);
+        }
+        catch (DeviceStateException)
+        {
+            Console.WriteLine($"! Reboot failed. Device is in a state that does not allow rebooting. It could be in a call");
+        }
+        catch (FeatureNotSupportedException)
+        {
+            Console.WriteLine($"! Reboot failed. Device does not support programmatic reboot.");
+        }
     }
 }
