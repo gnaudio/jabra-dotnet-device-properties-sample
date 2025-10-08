@@ -12,8 +12,8 @@
   <ItemGroup>
     <PackageReference Include="Jabra.DeviceConnector.Linux" Version="2.0.5" />
     <PackageReference Include="Jabra.DeviceConnector.Macos" Version="2.0.2" />
-    <PackageReference Include="Jabra.DeviceConnector.Windows" Version="2.2.10" />
-    <PackageReference Include="Jabra.NET.Sdk" Version="4.8.1" />
+    <PackageReference Include="Jabra.DeviceConnector.Windows" Version="2.3.0" />
+    <PackageReference Include="Jabra.NET.Sdk" Version="4.8.2" />
     <PackageReference Include="Jabra.NET.Sdk.Properties" Version="2.4.4" />
     <PackageReference Include="Jabra.Properties.Definition" Version="12.1.2" />
   </ItemGroup>

@@ -70,7 +70,9 @@ internal class Program
                 case "Jabra Engage 50 II":
                     SampleForJabraEngage50II.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;
-
+                case "Jabra Evolve2 75":
+                    SampleForJabraEvolve2_75.ReadWriteObserve(device, jabraSdkPropsFactory);
+                    break;
                 case "Jabra Evolve2 65 Flex":
                     SampleForJabraEvolve2_65Flex.ReadWriteObserve(device, jabraSdkPropsFactory);
                     break;

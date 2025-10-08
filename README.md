@@ -51,6 +51,11 @@ This sample demonstrates interactions with commonly used properties on select de
 | ---------------------- | --------------------------------------------------- | ------- | ------------- |
 | `batteryLevel`         | Battery level of headset							   | integer | read, observe |
 
+### Evolve2 75 (select property)
+| Property				  | Description                                         | Values											  | Operations |
+| ----------------------- | --------------------------------------------------- | --------------------------------------------------- | ---------- |
+| `onHeadDetectionStatus` | Tracks when headset is on head                      | string ("leftOn", "leftOff", "rightOn", "rightOff") | observe    |
+
 ### Engage 65 and Engage 75 (select property)
 
 | Property				 | Description																			 | Values | Operations |
